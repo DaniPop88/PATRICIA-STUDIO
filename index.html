@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patricia Rein Style Studio | Where Beauty Meets Confidence</title>
+    <meta name="description" content="Patricia Rein Style Studio – Hair & Beauty Salon in San Fernando, Pampanga. Experience style, elegance, and genuine Filipino hospitality.">
+    <link rel="icon" type="image/png" href="image/FAVICON.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-plum: #87024c;
+            --brand-cream: #fff8f4;
+            --brand-dark: #3a1830;
+            --brand-mauve: #c774a8;
+            --brand-shadow: #e7c9bc;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', Arial, sans-serif;
+            --accent: #c774a8;
+            --border: #e7c9bc;
+            --button: #87024c;
+            --button-hover: #a81c64;
+            --bg-gradient: linear-gradient(135deg, #fff8f4 60%, #f7e7ee 100%);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-gradient);
+            font-family: var(--font-body);
+            color: var(--brand-dark);
+            min-height: 100vh;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--brand-plum);
+            box-shadow: 0 2px 10px #87024c22;
+            transition: box-shadow 0.2s;
+        }
+        .header-branding {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2em 1em 1em 1em;
+        }
+        .logo-box {
+            background: var(--brand-cream);
+            border-radius: 1.5em;
+            box-shadow: 0 2px 18px #87024c33;
+            width: 220px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.6em;
+        }
+        .logo-box img {
+            width: 200px;
+            height: 200px;
+            border-radius: 1em;
+            object-fit: contain;
+            background: none;
+            box-shadow: 0 2px 8px #c774a822;
+        }
+        .site-title {
+            font-family: var(--font-heading);
+            font-size: 2.3em;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            color: var(--brand-cream);
+            margin-bottom: 0.2em;
+            text-align: center;
+            line-height: 1.1;
+        }
+        .site-subtitle {
+            color: var(--accent);
+            font-size: 1.15em;
+            margin-top: 0.2em;
+            text-align: center;
+            letter-spacing: 0.04em;
+        }
+        nav {
+            background: var(--brand-cream);
+            border-bottom: 2px solid var(--border);
+            box-shadow: 0 2px 8px #87024c11;
+            position: relative;
+        }
+        nav .nav-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 0.5em;
+            padding: 0.7em 0;
+            flex-wrap: wrap;
+            transition: max-height 0.3s;
+        }
+        nav li {
+            margin: 0 0.2em;
+        }
+        nav a {
+            color: var(--brand-plum);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            padding: 0.6em 1.1em;
+            border-radius: 2em;
+            transition: background 0.18s, color 0.18s;
+            font-family: var(--font-body);
+        }
+        nav a:hover, nav a.active {
+            background: var(--brand-mauve);
+            color: #fff;
+        }
+        .burger {
+            display: none;
+            position: absolute;
+            right: 1.1em;
+            top: 0.75em;
+            background: none;
+            border: none;
+            z-index: 1010;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        .burger:focus {
+            outline: 2px solid var(--accent);
+        }
+        .burger-icon {
+            width: 30px;
+            height: 30px;
+            display: block;
+            position: relative;
+        }
+        .burger-icon span {
+            display: block;
+            height: 4px;
+            width: 100%;
+            background: var(--brand-plum);
+            border-radius: 2px;
+            margin: 6px 0;
+            transition: all 0.3s;
+        }
+        .burger.open .burger-icon span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+            background: var(--accent);
+        }
+        .burger.open .burger-icon span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.open .burger-icon span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+            background: var(--accent);
+        }
+        @media (max-width: 900px) {
+            nav .nav-center {
+                justify-content: flex-start;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                align-items: flex-start;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                background: var(--brand-cream);
+                border-bottom: 2px solid var(--border);
+            }
+            nav ul.nav-open {
+                max-height: 700px;
+                padding: 0.7em 0;
+                box-shadow: 0 2px 18px #87024c22;
+            }
+            nav li {
+                width: 100%;
+            }
+            nav a {
+                padding: 0.7em 2em;
+                width: 100%;
+            }
+            .burger {
+                display: block;
+            }
+            .header-branding {
+                padding: 1.3em 1em 0.7em 1em;
+            }
+        }
+        @media (max-width: 600px) {
+            main {
+                padding: 1em 0.2em;
+            }
+            .hero-section, .section-content, .shop-section, .cart-section {
+                padding: 1em;
+            }
+            .shop-title, .section-title {
+                font-size: 1.35em;
+            }
+            .product-card {
+                padding: 0.7em;
+            }
+            .cart-section {
+                padding: 0.7em;
+            }
+            .section-content {
+                padding: 1em;
+            }
+            footer {
+                padding: 1em 0.3em 0.7em 0.3em;
+            }
+        }
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2em 1em 2em 1em;
+        }
+        .section-content {
+            margin: 2em 0;
+            padding: 2em;
+            background: #fff8f4;
+            border-radius: 1em;
+            box-shadow: 0 2px 14px #c774a822;
+            border: 2px solid var(--border);
+        }
+        .section-title {
+            font-size: 2em;
+            font-family: var(--font-heading);
+            color: var(--brand-plum);
+            margin-bottom: 0.8em;
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2em;
+            background: var(--bg-gradient);
+            border-radius: 1.3em;
+            box-shadow: 0 2px 14px #c774a844;
+            padding: 2em 2em 2em 2em;
+            margin-bottom: 2em;
+            border: 2px solid var(--accent);
+        }
+        .hero-content {
+            flex: 1 1 330px;
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 2.7em;
+            color: var(--brand-plum);
+            margin-bottom: 0.3em;
+            letter-spacing: 0.03em;
+        }
+        .hero-sub {
+            font-size: 1.18em;
+            margin-bottom: 1em;
+            color: var(--brand-dark);
+            font-weight: 500;
+        }
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7em;
+            margin-bottom: 1em;
+        }
+        .services-list span {
+            background: var(--brand-mauve);
+            color: #fff;
+            border-radius: 1em;
+            padding: 0.45em 1.2em;
+            font-size: 1.05em;
+            font-weight: 600;
+            box-shadow: 0 1px 4px #87024c22;
+            border: 1.5px solid #fff;
+        }
+        .hero-info, .hero-location {
+            font-size: 1.09em;
+            margin-bottom: 0.6em;
+            color: var(--brand-dark);
+        }
+        .hero-location {
+            font-weight: 600;
+        }
+        .hero-logo {
+            flex: 1 1 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 220px;
+        }
+        .hero-logo img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+            border-radius: 1em;
+            background: var(--brand-cream);
+            box-shadow: 0 4px 16px #c774a822;
+            border: 2px solid var(--brand-mauve);
+        }
+        .hero-details {
+            margin-top: 1.1em;
+            font-size: 1.12em;
+            color: var(--brand-dark);
+            background: #fff6fc;
+            padding: 1.2em 1em;
+            border-radius: 1em;
+            box-shadow: 0 2px 8px #c774a822;
+            border: 1px solid var(--border);
+        }
+        .hero-details strong {
+            color: var(--brand-plum);
+            font-family: var(--font-heading);
+            letter-spacing: 0.02em;
+        }
+        .hero-details ul {
+            margin-top: 0.7em;
+            margin-bottom: 0.7em;
+            padding-left: 1.5em;
+        }
+        .hero-details li {
+            margin-bottom: 0.4em;
+        }
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5em;
+            margin-top: 1.5em;
+        }
+        .service-card {
+            background: #fff;
+            border: 2px solid var(--accent);
+            border-radius: 1.2em;
+            box-shadow: 0 2px 8px #c774a822;
+            padding: 1.2em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .service-title {
+            font-size: 1.18em;
+            font-weight: 700;
+            color: var(--brand-plum);
+            margin-bottom: 0.2em;
+            font-family: var(--font-heading);
+        }
+        .service-desc {
+            font-size: 1em;
+            color: var(--brand-dark);
+            margin-bottom: 0.4em;
+        }
+        .service-icon {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        /* Testimonials Section */
+        .testimonial-list {
+            margin-top: 1.2em;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2em;
+        }
+        .testimonial-card {
+            background: #fff;
+            border: 2px solid var(--accent);
+            border-radius: 1em;
+            box-shadow: 0 2px 8px #c774a822;
+            padding: 1.2em;
+            font-size: 1.07em;
+            color: var(--brand-dark);
+            font-style: italic;
+            position: relative;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--brand-plum);
+            margin-top: 0.7em;
+            font-style: normal;
+        }
+        .testimonial-star {
+            color: var(--accent);
+            font-size: 1.35em;
+            margin-right: 0.15em;
+        }
+        /* Booking Section */
+        .booking-list {
+            margin-top: 1em;
+            font-size: 1.08em;
+            color: var(--brand-dark);
+        }
+        .booking-list li {
+            margin-bottom: 0.5em;
+        }
+        /* FAQ Section */
+        .faq-list {
+            margin-top: 1.2em;
+        }
+        .faq-q {
+            font-weight: 700;
+            color: var(--brand-plum);
+            margin-bottom: 0.2em;
+        }
+        .faq-a {
+            margin-bottom: 0.8em;
+            color: var(--brand-dark);
+        }
+        /* Contact Section */
+        .contact-block {
+            margin-top: 1.1em;
+            font-size: 1.09em;
+            color: var(--brand-dark);
+        }
+        .contact-block strong {
+            color: var(--accent);
+        }
+        .contact-social {
+            margin-top: 0.55em;
+        }
+        .contact-social a {
+            color: var(--brand-plum);
+            text-decoration: underline;
+            margin-right: 1em;
+            font-weight: 600;
+        }
+        /* Shop Section */
+        .shop-title {
+            font-size: 2.2em;
+            font-family: var(--font-heading);
+            color: var(--brand-plum);
+            margin-bottom: 0.8em;
+            letter-spacing: 0.04em;
+            text-align: center;
+        }
+        .shop-desc {
+            text-align: center;
+            font-size: 1.08em;
+            color: var(--brand-dark);
+            margin-bottom: 1.3em;
+            font-weight: 500;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+            gap: 2em;
+        }
+        .product-card {
+            background: #fff;
+            border: 2px solid var(--border);
+            border-radius: 1.2em;
+            box-shadow: 0 2px 8px #c774a822;
+            padding: 1.1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s, border-color 0.2s;
+            position: relative;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 18px #87024c44;
+            border-color: var(--accent);
+        }
+        .product-image {
+            width: 125px;
+            height: 125px;
+            background: #f7e7ee;
+            border-radius: 1em;
+            margin-bottom: 0.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid var(--accent);
+            box-shadow: 0 1px 4px #c774a822;
+        }
+        .product-image img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+        .product-title {
+            font-size: 1.18em;
+            font-weight: 700;
+            color: var(--brand-plum);
+            margin-bottom: 0.3em;
+            text-align: center;
+            letter-spacing: 0.01em;
+        }
+        .product-desc {
+            font-size: 1em;
+            margin-bottom: 0.3em;
+            text-align: center;
+            color: var(--brand-dark);
+        }
+        .product-meta {
+            font-size: 1.01em;
+            color: var(--accent);
+            margin-bottom: 0.5em;
+        }
+        .product-price {
+            font-size: 1.23em;
+            font-weight: 700;
+            color: var(--button);
+            margin-bottom: 0.7em;
+        }
+        .add-cart-btn {
+            background: var(--button);
+            color: #fff;
+            border: none;
+            padding: 0.6em 1.4em;
+            border-radius: 2em;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.18s;
+            box-shadow: 0 2px 8px #c774a822;
+            margin-top: 0.3em;
+        }
+        .add-cart-btn:hover {
+            background: var(--button-hover);
+        }
+        .product-feature {
+            position: absolute;
+            top: -13px;
+            right: -13px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.89em;
+            font-weight: 700;
+            padding: 0.5em 0.8em;
+            border-radius: 2em;
+            box-shadow: 0 1px 4px #87024c44;
+            letter-spacing: 0.02em;
+        }
+        /* Cart Section */
+        .cart-section {
+            background: #fff6fc;
+            border-radius: 1em;
+            box-shadow: 0 2px 8px #c774a822;
+            padding: 2em 1em 2.2em 1em;
+            max-width: 480px;
+            margin: 2em auto 2em auto;
+            border: 2px solid var(--accent);
+            position: relative;
+        }
+        .cart-title {
+            font-size: 1.35em;
+            font-weight: 700;
+            color: var(--brand-plum);
+            margin-bottom: 0.7em;
+            text-align: center;
+            font-family: var(--font-heading);
+            letter-spacing: 0.02em;
+        }
+        .cart-desc {
+            text-align: center;
+            color: var(--brand-dark);
+            font-size: 1.05em;
+            margin-bottom: 1em;
+            font-weight: 500;
+        }
+        .cart-items {
+            min-height: 80px;
+            margin-bottom: 1em;
+            border-radius: 0.7em;
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 1em;
+            box-shadow: 0 1px 2px #c774a822;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5em 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--brand-dark);
+        }
+        .cart-item-qty {
+            font-size: 0.98em;
+            color: var(--brand-plum);
+        }
+        .cart-total {
+            font-size: 1.17em;
+            font-weight: 700;
+            color: var(--button);
+            margin-bottom: 1em;
+            text-align: right;
+        }
+        .checkout-btn {
+            background: var(--button);
+            color: #fff;
+            border: none;
+            padding: 0.9em 2em;
+            border-radius: 2em;
+            font-size: 1.07em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.18s;
+            width: 100%;
+            box-shadow: 0 2px 8px #c774a822;
+            margin-top: 0.5em;
+            letter-spacing: 0.03em;
+        }
+        .checkout-btn:disabled {
+            background: #ccc;
+            color: #fff;
+            cursor: not-allowed;
+        }
+        .checkout-note {
+            text-align: center;
+            color: var(--accent);
+            font-size: 0.99em;
+            margin-top: 1em;
+            font-style: italic;
+        }
+        .cart-feature {
+            position: absolute;
+            top: -14px;
+            left: -14px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.91em;
+            font-weight: 700;
+            padding: 0.7em 1.1em;
+            border-radius: 2em;
+            box-shadow: 0 1px 4px #87024c44;
+            letter-spacing: 0.02em;
+        }
+        .floating-cart-btn {
+            position: fixed;
+            bottom: 38px;
+            right: 38px;
+            z-index: 9999;
+            background: var(--brand-plum);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 32px #87024c44;
+            cursor: pointer;
+            font-size: 2em;
+            transition: background 0.18s, box-shadow 0.18s;
+        }
+        .floating-cart-btn:hover, .floating-cart-btn:focus {
+            background: var(--accent);
+            box-shadow: 0 8px 40px #c774a822;
+            outline: none;
+        }
+        .floating-cart-icon {
+            width: 34px;
+            height: 34px;
+            display: block;
+        }
+        .floating-cart-qty {
+            position: absolute;
+            top: 11px;
+            right: 11px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.85em;
+            font-weight: 700;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 4px #87024c44;
+            border: 2px solid #fff;
+        }
+        @media (max-width: 600px) {
+            .floating-cart-btn {
+                bottom: 18px;
+                right: 18px;
+                width: 54px;
+                height: 54px;
+                font-size: 1.5em;
+            }
+            .floating-cart-icon {
+                width: 26px;
+                height: 26px;
+            }
+            .floating-cart-qty {
+                top: 6px;
+                right: 6px;
+                width: 16px;
+                height: 16px;
+                font-size: 0.72em;
+            }
+        }
+        footer {
+            background: var(--brand-plum);
+            padding: 2em 1em 1em 1em;
+            border-top: 2px solid var(--border);
+            color: #fff;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: space-between;
+        }
+        .footer-block {
+            min-width: 240px;
+        }
+        .footer-logo {
+            margin-bottom: 0.7em;
+        }
+        .footer-logo img {
+            width: 80px;
+            height: auto;
+            border-radius: 1em;
+            box-shadow: 0 1px 6px #fff3fa33;
+            background: #fff;
+        }
+        .footer-block strong {
+            color: var(--accent);
+            font-weight: 700;
+            font-family: var(--font-heading);
+            letter-spacing: 0.03em;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: underline;
+            margin-right: 1.2em;
+            font-weight: 600;
+            transition: color 0.18s;
+            letter-spacing: 0.02em;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        .footer-summary {
+            font-size: 0.96em;
+            margin-top: 1em;
+            line-height: 1.6;
+            color: #f7e7ee;
+        }
+        .footer-social {
+            margin-top: 0.8em;
+        }
+        .footer-social a {
+            margin-right: 0.7em;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+        .footer-social a:hover {
+            color: var(--accent);
+        }
+        @media (max-width: 900px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 1.2em;
+                align-items: flex-start;
+            }
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-logo {
+                margin-bottom: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-header" id="stickyHeader">
+        <div class="header-branding">
+            <div class="logo-box">
+                <img src="image/LOGO.png" alt="Patricia Rein Style Studio Logo" />
+            </div>
+            <div class="site-title">PATRICIA REIN STYLE STUDIO</div>
+            <div class="site-subtitle">Where Beauty Meets Confidence</div>
+        </div>
+        <nav id="mainNav">
+            <div class="nav-center">
+                <button class="burger" id="burgerBtn" aria-label="Menu" aria-controls="navUl" aria-expanded="false">
+                    <span class="burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                <ul id="navUl">
+                    <li><a href="#" class="home-link">Home</a></li>
+                    <li><a href="#about" class="about-link">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#booking">Booking Info</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section" id="about">
+            <div class="hero-content">
+                <h1 class="hero-title">Where Beauty Meets Confidence</h1>
+                <div class="hero-sub">Welcome to Patricia Rein Style Studio, your trusted beauty and grooming destination in the heart of San Fernando, Pampanga. Whether you're getting ready for a big event or just want to treat yourself to a self-care day, our professional stylists and beauty experts are here to help you look and feel your absolute best.</div>
+                <div class="services-list">
+                    <span>💇 Haircuts</span>
+                    <span>💅 Nail Services</span>
+                    <span>💄 Make-up</span>
+                    <span>🌿 Skin Treatments</span>
+                </div>
+                <div class="hero-info">
+                    Gandang tunay, layanan asli.<br>
+                    Experience style, elegance, and genuine Filipino hospitality.
+                </div>
+                <div class="hero-location">
+                    📍 #58 Luna Street, Barangay Doña Aurora, City of San Fernando, Pampanga<br>
+                    📞 +63 956 842 0935
+                </div>
+                <div class="hero-details">
+                    <strong>Our Journey, Your Beauty</strong><br>
+                    Founded in 2019 by Patricia Reindelle Francisco, a proud Fernandina and licensed hair and beauty expert, Patricia Rein Style Studio started with a dream: to give every client the confidence that comes with feeling beautiful.<br><br>
+                    <strong>Mission</strong>: To provide high-quality hair, skin, and beauty services that enhance our clients’ natural features while promoting self-love and confidence.<br>
+                    <strong>Vision</strong>: To become a leading beauty and wellness hub in Pampanga — known for professionalism, style, and care.<br>
+                    <strong>Values</strong>:
+                    <ul>
+                        <li>💖 Integrity in Service</li>
+                        <li>✂️ Creativity & Passion</li>
+                        <li>🌟 Personalized Attention</li>
+                        <li>🇵🇭 Local Pride – Proudly Kapampangan-run</li>
+                    </ul>
+                    We believe in the power of transformation — not just in looks, but in how you feel about yourself.
+                </div>
+            </div>
+            <div class="hero-logo">
+                <img src="image/LOGO.png" alt="Patricia Rein Style Studio" />
+            </div>
+        </section>
+        <section class="section-content" id="services">
+            <h2 class="section-title">Our Signature Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💇‍♀️</div>
+                    <div class="service-title">Hair Services</div>
+                    <div class="service-desc">Women's Haircut & Style, Men's Cut & Grooming, Hair Color (Balayage, Ombre, Highlights), Hair Rebond, Keratin, Brazilian Blowout, Scalp Treatment & Deep Conditioning.</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💄</div>
+                    <div class="service-title">Make-Up & Glam</div>
+                    <div class="service-desc">Bridal Make-up (Onsite & In-Studio), Event & Photoshoot Packages, Natural Glam & Everyday Looks.</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💅</div>
+                    <div class="service-title">Nail Care</div>
+                    <div class="service-desc">Classic Manicure & Pedicure, Gel Polish, Nail Art, Foot Spa & Paraffin Treatment.</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <div class="service-title">Skin & Wellness</div>
+                    <div class="service-desc">Basic Facial Cleansing, Diamond Peel, Collagen Facial, Back Massage (30 or 60 mins).</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <div class="service-title">Beauty Packages</div>
+                    <div class="service-desc">Rein Makeover (Hair + Make-up + Nails), Bride-to-Be Bundle (Trial + Wedding Day Service), Barkada Beautify (Group of 3+ Discount).</div>
+                </div>
+            </div>
+            <div style="margin-top:2em; text-align:center; font-size:1.09em; color:var(--brand-dark);">
+                <strong>All services come with complimentary refreshments & personalized consultation.</strong>
+            </div>
+        </section>
+        <section class="shop-section" id="shop">
+            <h2 class="shop-title">Featured Products</h2>
+            <div class="shop-desc">
+                Discover our best-selling salon products to enhance your self-care routine. All products are handpicked and trusted by our expert team!
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <div class="product-card" data-product-id="1">
+                    <div class="product-feature">Best Seller</div>
+                    <div class="product-image">
+                        <img src="image/placeholder1.png" alt="Hair Serum" />
+                    </div>
+                    <div class="product-title">Rein Hair Serum</div>
+                    <div class="product-desc">Nourishing serum for shiny, healthy hair. Leaves hair soft, smooth, and manageable all day.</div>
+                    <div class="product-meta">Qty: 8</div>
+                    <div class="product-price">$32.50</div>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card" data-product-id="2">
+                    <div class="product-image">
+                        <img src="image/placeholder2.png" alt="Collagen Facial Mask" />
+                    </div>
+                    <div class="product-title">Collagen Facial Mask</div>
+                    <div class="product-desc">Hydrates and brightens for radiant skin. Ideal for refreshing after a long day or prepping for a special event.</div>
+                    <div class="product-meta">Qty: 12</div>
+                    <div class="product-price">$18.99</div>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card" data-product-id="3">
+                    <div class="product-feature">New Arrival</div>
+                    <div class="product-image">
+                        <img src="image/placeholder3.png" alt="Nail Polish Set" />
+                    </div>
+                    <div class="product-title">Gel Nail Polish Set</div>
+                    <div class="product-desc">Long-lasting colors for perfect nails. Includes vibrant shades and smooth application for salon-quality results.</div>
+                    <div class="product-meta">Qty: 5</div>
+                    <div class="product-price">$22.75</div>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+                <div class="product-card" data-product-id="4">
+                    <div class="product-image">
+                        <img src="image/placeholder4.png" alt="Scalp Treatment Oil" />
+                    </div>
+                    <div class="product-title">Scalp Treatment Oil</div>
+                    <div class="product-desc">Revitalizing oil for scalp health. Soothes dryness and promotes strong, healthy hair growth.</div>
+                    <div class="product-meta">Qty: 10</div>
+                    <div class="product-price">$25.90</div>
+                    <button class="add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+        <section class="section-content" id="testimonials">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-list">
+                <div class="testimonial-card">
+                    <span class="testimonial-star">🌟</span>“Super ganda ng result! Ate Pat really knows what works for my face shape and skin tone. Highly recommended!”
+                    <div class="testimonial-author">— Cheska A., Angeles City</div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-star">🌟</span>“Hindi ko in-expect na ganito ka-luxurious yung treatment sa price nila. Sulit na sulit!”
+                    <div class="testimonial-author">— Kristel D., San Fernando</div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-star">🌟</span>“Got my pre-debut shoot make-up here. Ang galing nila! I felt like a star.”
+                    <div class="testimonial-author">— Monique B., Mexico, Pampanga</div>
+                </div>
+            </div>
+        </section>
+        <section class="section-content" id="booking">
+            <h2 class="section-title">Booking & Appointments</h2>
+            <ul class="booking-list">
+                <li>✅ Walk-ins are welcome, but appointments are highly recommended for personalized service.</li>
+                <li>✅ Same-day bookings accepted (based on availability).</li>
+                <li>✅ Bridal packages require at least 7 days advance reservation.</li>
+                <li>✅ Home service available for Pampanga-area weddings/events.</li>
+            </ul>
+            <div style="margin-top:1.2em;">
+                <strong>How to Book:</strong><br>
+                📞 Call or Text: <a href="tel:+639568420935" style="color:var(--accent);text-decoration:underline;">+63 956 842 0935</a><br>
+                📧 Email: <a href="mailto:contact@patriciareinstudio.com" style="color:var(--accent);text-decoration:underline;">contact@patriciareinstudio.com</a><br>
+                📱 Message us via <a href="https://fb.com/patriciareinstudio" style="color:var(--accent);text-decoration:underline;">Facebook</a> or <a href="https://instagram.com/patriciareinstudio" style="color:var(--accent);text-decoration:underline;">Instagram</a>
+            </div>
+            <div style="margin-top:1.2em;">
+                <strong>Payment Options:</strong><br>
+                Cash<br>
+                GCash: <span style="color:var(--accent);font-weight:600;">0956 842 0935</span> (Patricia Rein Style Studio)<br>
+                Bank transfer (BPI or BDO upon request)
+            </div>
+        </section>
+        <section class="section-content" id="faq">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-q">Q: Do you accept walk-ins?</div>
+                <div class="faq-a">A: Yes, but we recommend appointments for major services to avoid long wait times.</div>
+                <div class="faq-q">Q: Are your stylists trained?</div>
+                <div class="faq-a">A: All our staff are certified professionals with local and international training.</div>
+                <div class="faq-q">Q: Do you offer bridal services on location?</div>
+                <div class="faq-a">A: Yes! We offer full-service packages for weddings, debuts, and corporate events.</div>
+                <div class="faq-q">Q: Can I bring my own products?</div>
+                <div class="faq-a">A: For certain treatments, yes. Please inform us in advance so we can assess compatibility.</div>
+            </div>
+        </section>
+        <section class="section-content" id="contact">
+            <h2 class="section-title">Let’s Get You Glammed Up!</h2>
+            <div class="contact-block">
+                <strong>Visit Us:</strong><br>
+                Patricia Rein Style Studio<br>
+                #58 Luna Street, Barangay Doña Aurora,<br>
+                City of San Fernando, Pampanga 2000<br>
+                Region III – Central Luzon, Philippines<br><br>
+                <strong>Phone/Viber/WhatsApp:</strong> <a href="tel:+639568420935" style="color:var(--accent);text-decoration:underline;">+63 956 842 0935</a><br>
+                <strong>Email:</strong> <a href="mailto:contact@patriciareinstudio.com" style="color:var(--accent);text-decoration:underline;">contact@patriciareinstudio.com</a><br>
+                <strong>Website:</strong> <a href="https://www.patriciareinstudio.com" style="color:var(--accent);text-decoration:underline;">www.patriciareinstudio.com</a><br>
+                <strong>Operating Hours:</strong><br>
+                Monday to Saturday: 9:00 AM – 7:00 PM<br>
+                Sunday: By Appointment Only<br>
+                <div class="contact-social">
+                    <strong>Follow Us:</strong>
+                    <a href="https://fb.com/patriciareinstudio" target="_blank">Facebook</a>
+                    <a href="https://instagram.com/patriciareinstudio" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </section>
+        <section class="cart-section" id="cartSection">
+            <div class="cart-feature">Your Shopping Cart</div>
+            <div class="cart-title">Cart</div>
+            <div class="cart-desc">
+                Review your selected products below. Ready to complete your purchase and pamper yourself? Click checkout to proceed!
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div style="color:var(--accent);text-align:center;">Your cart is empty.</div>
+            </div>
+            <div class="cart-total" id="cartTotal"></div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>Checkout</button>
+            <div class="checkout-note">
+                Secure checkout & flexible payment options available. <br>
+                Need help? <a href="#contact" style="color:var(--button);text-decoration:underline;">Contact us</a> for support!
+            </div>
+        </section>
+        <button class="floating-cart-btn" id="floatingCartBtn" aria-label="View Cart">
+            <svg class="floating-cart-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm-14-2V6a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6h18l-2 12H5L3 6z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="floating-cart-qty" id="floatingCartQty" style="display:none;">0</span>
+        </button>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-block">
+                <div class="footer-logo">
+                    <img src="image/LOGO.png" alt="Patricia Rein Style Studio Logo" />
+                </div>
+                <div>
+                    <strong>Patricia Rein Style Studio</strong><br>
+                    #58 Luna Street, Barangay Doña Aurora, City of San Fernando, Pampanga 2000<br>
+                    Phone: +63 956 842 0935<br>
+                    Email: <a href="mailto:contact@patriciareinstudio.com">contact@patriciareinstudio.com</a><br>
+                    Website: <a href="https://www.patriciareinstudio.com">www.patriciareinstudio.com</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://fb.com/patriciareinstudio" target="_blank">Facebook</a>
+                    <a href="https://instagram.com/patriciareinstudio" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-block">
+                <strong>Business Hours:</strong><br>
+                Mon–Sat: 9AM–7PM<br>
+                Sun: By appointment
+                <div style="margin-top:1em;">
+                    <strong>Business Info:</strong><br>
+                    Business Permit No.: SFP-2021-89472<br>
+                    TIN: 009-672-119-000<br>
+                    DTI Registration No.: 2034712<br>
+                    Registered Name: Patricia Rein Style Studio<br>
+                    Owner: Patricia Reindelle Francisco (TESDA Certified)
+                </div>
+            </div>
+            <div class="footer-block">
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="refund-policy.html">Refund Policy</a>
+                </div>
+                <div class="footer-summary">
+                    Patricia Rein Style Studio<br>
+                    #58 Luna Street, Barangay Doña Aurora, City of San Fernando, Pampanga 2000<br>
+                    Phone: +63 956 842 0935<br>
+                    Email: contact@patriciareinstudio.com<br>
+                    Website: www.patriciareinstudio.com<br>
+                    Business Hours: Mon–Sat 9AM–7PM | Sun by appointment<br>
+                    Facebook: fb.com/patriciareinstudio<br>
+                    Instagram: @patriciareinstudio
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;font-size:0.85em;margin-top:1.5em;color:#f7e7ee;">
+            &copy; 2025 Patricia Rein Style Studio. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        // Burger button & Mobile nav
+        document.addEventListener('DOMContentLoaded', function() {
+            var burgerBtn = document.getElementById('burgerBtn');
+            var navUl = document.getElementById('navUl');
+            burgerBtn.addEventListener('click', function() {
+                var expanded = burgerBtn.getAttribute('aria-expanded') === 'true';
+                burgerBtn.setAttribute('aria-expanded', !expanded);
+                burgerBtn.classList.toggle('open');
+                navUl.classList.toggle('nav-open');
+            });
+            document.addEventListener('click', function(e) {
+                if(window.innerWidth <= 900) {
+                    if (!navUl.contains(e.target) && !burgerBtn.contains(e.target)) {
+                        burgerBtn.classList.remove('open');
+                        navUl.classList.remove('nav-open');
+                        burgerBtn.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+            window.addEventListener('resize', function() {
+                if(window.innerWidth > 900) {
+                    navUl.classList.remove('nav-open');
+                    burgerBtn.classList.remove('open');
+                    burgerBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+            // About Us link scrolls to hero-section
+            document.querySelectorAll('.about-link').forEach(function(link){
+                link.addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.getElementById('about').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+            // Home link scrolls to top of page
+            document.querySelectorAll('.home-link').forEach(function(link){
+                link.addEventListener('click', function(e){
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        });
+        // Cart Functionality for Demo Purposes
+        const products = [
+            {
+                id: 1,
+                name: "Rein Hair Serum",
+                price: 32.50,
+                qty: 8
+            },
+            {
+                id: 2,
+                name: "Collagen Facial Mask",
+                price: 18.99,
+                qty: 12
+            },
+            {
+                id: 3,
+                name: "Gel Nail Polish Set",
+                price: 22.75,
+                qty: 5
+            },
+            {
+                id: 4,
+                name: "Scalp Treatment Oil",
+                price: 25.90,
+                qty: 10
+            }
+        ];
+        let cart = [];
+        function updateCart() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            cartItemsDiv.innerHTML = '';
+            let total = 0;
+            let totalQty = 0;
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<div style="color:var(--accent);text-align:center;">Your cart is empty.</div>';
+                document.getElementById('cartTotal').innerText = '';
+                document.getElementById('checkoutBtn').disabled = true;
+                document.getElementById('floatingCartQty').style.display = 'none';
+                return;
+            }
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                totalQty += item.quantity;
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                    <span class="cart-item-title">${item.name}</span>
+                    <span class="cart-item-qty">x${item.quantity}</span>
+                    <span style="margin-left:1em;color:var(--brand-plum);">$${(item.price * item.quantity).toFixed(2)}</span>
+                    <button style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:1.2em;" onclick="removeFromCart(${item.id})" aria-label="Remove from cart">&times;</button>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+            });
+            document.getElementById('cartTotal').innerText = `Total: $${total.toFixed(2)}`;
+            document.getElementById('checkoutBtn').disabled = false;
+            const qtyElem = document.getElementById('floatingCartQty');
+            qtyElem.textContent = totalQty;
+            qtyElem.style.display = 'flex';
+        }
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            let cartItem = cart.find(item => item.id === productId);
+            if (cartItem) {
+                if (cartItem.quantity < product.qty) {
+                    cartItem.quantity += 1;
+                }
+            } else {
+                cart.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
+            }
+            updateCart();
+        }
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
+        document.querySelectorAll('.add-cart-btn').forEach((btn, idx) => {
+            btn.addEventListener('click', () => addToCart(products[idx].id));
+        });
+        document.getElementById('checkoutBtn').addEventListener('click', function() {
+            window.location.href = "order-summary.html";
+        });
+        // Floating Cart Button
+        document.getElementById('floatingCartBtn').addEventListener('click', function() {
+            var cartSection = document.getElementById('cartSection');
+            if (cartSection) {
+                cartSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCart();
+        });
+    </script>
+</body>
+</html>
