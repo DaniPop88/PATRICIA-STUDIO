@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary | Patricia Rein Style Studio</title>
+    <meta name="description" content="Order review and confirmation - Patricia Rein Style Studio. Finalize your order, confirm details, and proceed to secure payment.">
+    <link rel="icon" type="image/png" href="image/FAVICON.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-plum: #87024c;
+            --brand-cream: #fff8f4;
+            --brand-dark: #3a1830;
+            --brand-mauve: #c774a8;
+            --brand-shadow: #e7c9bc;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', Arial, sans-serif;
+            --accent: #c774a8;
+            --border: #e7c9bc;
+            --success: #5bb87f;
+            --error: #d94f4f;
+            --button: #87024c;
+            --button-hover: #a81c64;
+            --bg-gradient: linear-gradient(135deg, #fff8f4 60%, #f7e7ee 100%);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-gradient);
+            font-family: var(--font-body);
+            color: var(--brand-dark);
+            min-height: 100vh;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        header {
+            background: var(--brand-plum);
+            padding: 2em 1em 1em 1em;
+            text-align: center;
+        }
+        .logo-box {
+            background: var(--brand-cream);
+            border-radius: 1.5em;
+            box-shadow: 0 2px 18px #87024c33;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.7em auto;
+        }
+        .logo-box img {
+            width: 100px;
+            height: 100px;
+            border-radius: 1em;
+            object-fit: contain;
+            background: none;
+            box-shadow: 0 2px 8px #c774a822;
+        }
+        .site-title {
+            font-family: var(--font-heading);
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            color: var(--brand-cream);
+            margin-bottom: 0.18em;
+        }
+        .site-subtitle {
+            color: var(--accent);
+            font-size: 1.1em;
+            margin-bottom: 0.2em;
+            text-align: center;
+            letter-spacing: 0.04em;
+        }
+        main {
+            max-width: 600px;
+            margin: 2em auto;
+            padding: 1em;
+        }
+        .summary-container {
+            background: #fff8f4;
+            border-radius: 1.3em;
+            box-shadow: 0 2px 14px #c774a822;
+            border: 2px solid var(--border);
+            padding: 2em 1.5em;
+            margin-bottom: 2em;
+        }
+        .summary-title {
+            font-size: 1.7em;
+            font-family: var(--font-heading);
+            color: var(--brand-plum);
+            text-align: center;
+            margin-bottom: 0.7em;
+            letter-spacing: 0.03em;
+        }
+        .order-info {
+            font-size: 1.08em;
+            margin-bottom: 1.3em;
+            color: var(--brand-dark);
+            text-align: center;
+        }
+        .order-list {
+            margin: 1.5em 0;
+            padding: 0;
+            list-style: none;
+        }
+        .order-list li {
+            background: #fff;
+            border: 1px solid var(--accent);
+            border-radius: 0.8em;
+            margin-bottom: 0.7em;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1em;
+        }
+        .order-label {
+            font-weight: 700;
+            color: var(--brand-plum);
+        }
+        .order-value {
+            color: var(--brand-dark);
+            font-weight: 500;
+        }
+        .order-total {
+            border-top: 2px solid var(--accent);
+            margin-top: 1em;
+            padding-top: 1em;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--button);
+            text-align: right;
+        }
+        .customer-form {
+            margin: 2em 0 1em 0;
+            background: #fff;
+            border: 1.5px solid var(--border);
+            border-radius: 1em;
+            padding: 1.2em 1em;
+        }
+        .form-title {
+            font-size: 1.15em;
+            color: var(--brand-plum);
+            font-weight: 700;
+            margin-bottom: 1em;
+            font-family: var(--font-heading);
+        }
+        .form-row {
+            margin-bottom: 1em;
+        }
+        .form-row label {
+            display: block;
+            font-weight: 500;
+            color: var(--brand-dark);
+            margin-bottom: 0.25em;
+        }
+        .form-row input,
+        .form-row select,
+        .form-row textarea {
+            width: 100%;
+            padding: 0.7em;
+            border-radius: 0.6em;
+            border: 1px solid var(--border);
+            font-size: 1em;
+            font-family: var(--font-body);
+            background: #fff8f4;
+        }
+        .form-row input:focus,
+        .form-row select:focus,
+        .form-row textarea:focus {
+            outline: 2px solid var(--accent);
+        }
+        .form-actions {
+            text-align: center;
+        }
+        .submit-btn {
+            background: var(--button);
+            color: #fff;
+            border: none;
+            padding: 0.9em 2.2em;
+            font-size: 1.08em;
+            font-weight: 700;
+            border-radius: 2em;
+            cursor: pointer;
+            transition: background 0.18s;
+            box-shadow: 0 2px 8px #c774a822;
+            margin-top: 0.6em;
+            letter-spacing: 0.03em;
+        }
+        .submit-btn:hover, .submit-btn:focus {
+            background: var(--button-hover);
+        }
+        .confirmation-message {
+            display: none;
+            background: #f6fff7;
+            border: 2px solid var(--success);
+            color: var(--brand-dark);
+            border-radius: 1em;
+            padding: 1.5em 1em;
+            margin-top: 2em;
+            text-align: center;
+            box-shadow: 0 2px 12px #5bb87f44;
+            font-size: 1.1em;
+        }
+        .confirmation-message strong {
+            color: var(--success);
+            font-family: var(--font-heading);
+            font-size: 1.18em;
+        }
+        .confirmation-message .confirm-steps {
+            margin-top: 1em;
+            text-align: left;
+            display: inline-block;
+        }
+        .confirmation-message .confirm-steps li {
+            margin-bottom: 0.5em;
+        }
+        .important {
+            color: var(--error);
+            font-weight: 700;
+        }
+        @media (max-width: 700px) {
+            main, .summary-container {
+                padding: 1em 0.5em;
+            }
+            .summary-title {
+                font-size: 1.25em;
+            }
+            .order-list li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .order-total {
+                font-size: 1em;
+            }
+            .customer-form {
+                padding: 1em 0.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <img src="image/LOGO.png" alt="Patricia Rein Style Studio Logo" />
+        </div>
+        <div class="site-title">Patricia Rein Style Studio</div>
+        <div class="site-subtitle">Order Review & Confirmation</div>
+    </header>
+    <main>
+        <section class="summary-container" id="orderSummarySection">
+            <div class="summary-title">Your Order Summary</div>
+            <div class="order-info">
+                Please review your order below. Make sure all details are accurate before submitting. After placing your order, a member of our team will personally contact you to confirm product selections, colors, availability, and any other specifics.
+            </div>
+            <ul class="order-list" id="orderList">
+                <li>
+                    <span class="order-label">Product:</span>
+                    <span class="order-value" id="productName">Rein Hair Serum</span>
+                </li>
+                <li>
+                    <span class="order-label">Quantity:</span>
+                    <span class="order-value" id="productQty">1</span>
+                </li>
+                <li>
+                    <span class="order-label">Price per item:</span>
+                    <span class="order-value" id="productPrice">$32.50</span>
+                </li>
+                <li>
+                    <span class="order-label">Subtotal:</span>
+                    <span class="order-value" id="productSubtotal">$32.50</span>
+                </li>
+                <li>
+                    <span class="order-label">Shipping:</span>
+                    <span class="order-value" id="shippingPrice">$5.00</span>
+                </li>
+            </ul>
+            <div class="order-total" id="orderTotal">Order Total: $37.50</div>
+        </section>
+        <section class="customer-form" id="customerFormSection">
+            <div class="form-title">Please provide your contact details to proceed</div>
+            <form id="orderForm" autocomplete="off">
+                <div class="form-row">
+                    <label for="customerName">Full Name</label>
+                    <input type="text" id="customerName" name="customerName" required autocomplete="name">
+                </div>
+                <div class="form-row">
+                    <label for="customerEmail">Email Address</label>
+                    <input type="email" id="customerEmail" name="customerEmail" required autocomplete="email">
+                </div>
+                <div class="form-row">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" required autocomplete="tel">
+                </div>
+                <div class="form-row">
+                    <label for="customerAddress">Delivery Address</label>
+                    <textarea id="customerAddress" name="customerAddress" required rows="2" autocomplete="street-address"></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="paymentMethod">Preferred Payment Method</label>
+                    <select id="paymentMethod" name="paymentMethod" required>
+                        <option value="">Select...</option>
+                        <option value="gcash">GCash</option>
+                        <option value="bank">Bank Transfer (BPI/BDO)</option>
+                        <option value="cash">Cash (Pay at Salon)</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Submit Order</button>
+                </div>
+            </form>
+        </section>
+        <div class="confirmation-message" id="confirmationMessage">
+            <strong>Order Submitted Successfully!</strong>
+            <div style="margin-top:1em;">Thank you for choosing Patricia Rein Style Studio. Your order has been received and is now being processed.</div>
+            <ul class="confirm-steps">
+                <li>💬 One of our team members will reach out to you to confirm your order details, including colors, product availability, and any customizations.</li>
+                <li>📝 Please verify these details with our team before proceeding to payment. This ensures that everything matches your preferences.</li>
+                <li>🔗 After confirmation, we will send you a secure payment link based on your chosen method.</li>
+                <li class="important">⏰ Kindly complete your payment within <strong>24 hours</strong> to avoid automatic cancellation of your order.</li>
+                <li>🙏 If you have questions or need help, please contact us at <a href="mailto:contact@patriciareinstudio.com">contact@patriciareinstudio.com</a> or <a href="tel:+639568420935">+63 956 842 0935</a>.</li>
+            </ul>
+            <div style="margin-top:1.2em; font-size:1em; color:var(--brand-dark);">
+                We appreciate your trust in us and look forward to serving you soon!
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div style="max-width:700px;margin:auto;padding:1em 0;text-align:center;">
+            <div style="margin-bottom:1em;">
+                <img src="image/LOGO.png" alt="Patricia Rein Style Studio Logo" style="width:60px;height:60px;border-radius:1em;box-shadow:0 1px 6px #fff3fa33;background:#fff;">
+            </div>
+            <div style="font-family:var(--font-heading);font-weight:700;font-size:1.12em;color:var(--brand-cream);margin-bottom:0.3em;">
+                Patricia Rein Style Studio
+            </div>
+            <div style="color:#f7e7ee;margin-bottom:0.2em;">#58 Luna Street, Barangay Doña Aurora, City of San Fernando, Pampanga 2000</div>
+            <div style="color:#f7e7ee;">Phone: +63 956 842 0935 | Email: contact@patriciareinstudio.com</div>
+            <div style="margin-top:0.7em;">
+                <a href="privacy-policy.html" style="color:#fff;text-decoration:underline;margin-right:1em;">Privacy Policy</a>
+                <a href="terms.html" style="color:#fff;text-decoration:underline;margin-right:1em;">Terms of Service</a>
+                <a href="refund-policy.html" style="color:#fff;text-decoration:underline;">Refund Policy</a>
+            </div>
+            <div style="margin-top:0.7em;color:#f7e7ee;">
+                &copy; 2025 Patricia Rein Style Studio. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Responsive order summary demo: replace with dynamic data if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Example data - replace these with dynamic values if integrating with backend
+            var order = {
+                product: 'Rein Hair Serum',
+                qty: 1,
+                price: 32.50,
+                shipping: 5.00
+            };
+            document.getElementById('productName').textContent = order.product;
+            document.getElementById('productQty').textContent = order.qty;
+            document.getElementById('productPrice').textContent = '$' + order.price.toFixed(2);
+            document.getElementById('productSubtotal').textContent = '$' + (order.price * order.qty).toFixed(2);
+            document.getElementById('shippingPrice').textContent = '$' + order.shipping.toFixed(2);
+            document.getElementById('orderTotal').textContent = 'Order Total: $' + (order.price * order.qty + order.shipping).toFixed(2);
+        });
+
+        // Order form submission behavior
+        document.getElementById('orderForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            document.getElementById('orderSummarySection').style.display = 'none';
+            document.getElementById('customerFormSection').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
