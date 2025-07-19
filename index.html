@@ -818,10 +818,10 @@
                 <ul id="navUl">
                     <li><a href="#" class="home-link">Home</a></li>
                     <li><a href="#about" class="about-link">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#booking">Booking Info</a></li>
-                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#services" class="services-link">Services</a></li>
+                    <li><a href="#testimonials" class="testimonials-link">Testimonials</a></li>
+                    <li><a href="#booking" class="booking-link">Booking Info</a></li>
+                    <li><a href="#faq" class="faq-link">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -1124,18 +1124,41 @@
                     burgerBtn.setAttribute('aria-expanded', 'false');
                 }
             });
-            // About Us link scrolls to hero-section
+            // Navigation scroll handlers
             document.querySelectorAll('.about-link').forEach(function(link){
                 link.addEventListener('click', function(e){
                     e.preventDefault();
                     document.getElementById('about').scrollIntoView({ behavior: 'smooth', block: 'center' });
                 });
             });
-            // Home link scrolls to top of page
             document.querySelectorAll('.home-link').forEach(function(link){
                 link.addEventListener('click', function(e){
                     e.preventDefault();
                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            document.querySelectorAll('.services-link').forEach(function(link){
+                link.addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.getElementById('services').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+            document.querySelectorAll('.testimonials-link').forEach(function(link){
+                link.addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+            document.querySelectorAll('.booking-link').forEach(function(link){
+                link.addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.getElementById('booking').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+            document.querySelectorAll('.faq-link').forEach(function(link){
+                link.addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.getElementById('faq').scrollIntoView({ behavior: 'smooth', block: 'center' });
                 });
             });
         });
